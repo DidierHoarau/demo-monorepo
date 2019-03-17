@@ -13,7 +13,12 @@ services:
       demo-network:
         aliases:
           - demo-proxy-swarm
+      monitoring-network:
+        aliases:
+          - demo-proxy-swarm
 
 networks:
   demo-network:
+    external: true
+  monitoring-network:
     external: true

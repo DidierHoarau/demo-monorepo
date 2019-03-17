@@ -1,14 +1,16 @@
-version: '3.7'
+version: '3'
 
 services:
-  server:
+  grafana:
     build: .
     image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
+    ports:
+      - '8013:3000'
     networks:
-      demo-network:
+      monitoring-network:
         aliases:
-          - demo-web-vue
+          - prometheus-grafana
 
 networks:
-  demo-network:
+  monitoring-network:
     external: true
