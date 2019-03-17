@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  server:
+    build: .
+    image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
+    ports:
+      - 80
+    networks:
+      staging-demo-multitech-network:
+        aliases:
+          - demo-multitech-web-vue
+
+networks:
+  staging-demo-multitech-network:
+    external: true

@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
+    ports:
+      - 80
+    deploy:
+      replicas: 2
+    networks:
+      demo-multitech-network:
+        aliases:
+          - demo-multitech-go
+
+networks:
+  demo-multitech-network:
+    external: true
