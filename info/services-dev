@@ -1,4 +1,3 @@
-demo-multitech/demo-multitech-proxy-kubernetes=999.0.0
 demo-multitech/demo-multitech-web-vue=999.0.0
 demo-multitech/demo-multitech-nodejs=999.0.0
 demo-multitech/demo-multitech-python=999.0.0
@@ -6,9 +5,3 @@ demo-multitech/demo-multitech-php=999.0.0
 demo-multitech/demo-multitech-go=999.0.0
 demo-multitech/demo-multitech-java=999.0.0
 demo-multitech/demo-multitech-comments=999.0.0
-monitoring/elk-elasticsearch=999.0.0
-monitoring/elk-kibana=999.0.0
-monitoring/elk-logspout=999.0.0
-monitoring/elk-logstash=999.0.0
-monitoring/prometheus=999.0.0
-monitoring/prometheus-grafana=999.0.0

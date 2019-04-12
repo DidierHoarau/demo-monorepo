@@ -5,16 +5,19 @@ metadata:
   labels:
     app: ${SERVICE}
   annotations:
-    monitoring: "true"
+    monitoring: 'true'
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: ${SERVICE}
+
   template:
     metadata:
       labels:
         app: ${SERVICE}
+      annotations:
+        sidecar.istio.io/inject: 'false'
     spec:
       containers:
         - image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
@@ -32,7 +35,7 @@ metadata:
 spec:
   ports:
     - name: demo-multitech-vue
-      nodePort: 30100
+      nodePort: 33100
       port: 80
       protocol: TCP
       targetPort: 80
@@ -49,7 +52,7 @@ metadata:
 spec:
   ports:
     - name: demo-multitech-metrics
-      nodePort: 30101
+      nodePort: 33101
       port: 9113
       protocol: TCP
       targetPort: 9113
@@ -64,7 +67,7 @@ metadata:
 spec:
   ports:
     - name: pod-port
-      protocol: "TCP"
+      protocol: 'TCP'
       port: 9113
       targetPort: 9113
   selector:

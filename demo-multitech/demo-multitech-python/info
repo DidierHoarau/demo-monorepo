@@ -1,5 +1,5 @@
 name=demo-multitech-python
-version=5.0
+version=5.3
 volumes=
 type=python-3
 networks=demo-multitech-network

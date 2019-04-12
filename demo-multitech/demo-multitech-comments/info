@@ -1,4 +1,4 @@
 name=demo-multitech-comments
-version=2
+version=2.1
 volumes=
 type=nodejs-10
