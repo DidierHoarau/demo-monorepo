@@ -1,1 +1,3 @@
-/istio-1.1.1
+/istio-*
+/ucp-bundle-admin*
+.DS_Store
