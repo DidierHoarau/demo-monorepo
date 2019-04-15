@@ -120,7 +120,7 @@ export default {
       axios
         .get(`/api-myip/`)
         .then(response => {
-          this.ipAddress = "IP=" + response.data;
+          this.ipAddress = response.data;
         })
         .catch(() => {
           this.ipAddress = "Error getting IP";
