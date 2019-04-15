@@ -1,5 +1,5 @@
 name=demo-multitech-nodejs
-version=2.8
+version=2.9
 volumes=
 type=nodejs-10
 networks=demo-multitech-network

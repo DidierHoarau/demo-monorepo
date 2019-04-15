@@ -2,24 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ${SERVICE}
-  labels:
-    app: ${SERVICE}
-  annotations:
-    monitoring: 'true'
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: ${SERVICE}
-
   template:
     metadata:
       labels:
         app: ${SERVICE}
     spec:
       containers:
-        - image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
-          name: ${SERVICE}
+        - name: ${SERVICE}
+          image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
           ports:
             - containerPort: 80
             - containerPort: 9113
@@ -40,7 +35,6 @@ spec:
   selector:
     app: ${SERVICE}
   type: NodePort
-  externalTrafficPolicy: Local
 ---
 apiVersion: v1
 kind: Service

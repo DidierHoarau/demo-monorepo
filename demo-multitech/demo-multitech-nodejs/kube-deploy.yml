@@ -25,7 +25,7 @@ metadata:
 spec:
   ports:
     - name: pod-port
-      protocol: "TCP"
+      protocol: 'TCP'
       port: 80
       targetPort: 80
   selector:

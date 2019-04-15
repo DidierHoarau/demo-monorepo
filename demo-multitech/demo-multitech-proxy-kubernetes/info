@@ -1,5 +1,5 @@
 name=demo-multitech-proxy-kubernetes
-version=1.16
+version=1.17
 volumes=
 type=other
 networks=demo-multitech-network
