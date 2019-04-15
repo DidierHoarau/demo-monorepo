@@ -118,7 +118,7 @@ export default {
     getIp: function() {
       axios
         .get(`/api-myip/`)
-        .then((res) => {
+        .then(res => {
           this.ipAddress = res;
         })
         .catch(() => {
