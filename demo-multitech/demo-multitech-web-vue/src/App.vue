@@ -86,6 +86,7 @@ export default {
   created: function() {
     this.refresh();
     this.trackVisit();
+    this.getIp();
   },
   methods: {
     refresh: function() {
@@ -118,8 +119,8 @@ export default {
     getIp: function() {
       axios
         .get(`/api-myip/`)
-        .then(res => {
-          this.ipAddress = res;
+        .then(response => {
+          this.ipAddress = "IP=" + response.data;
         })
         .catch(() => {
           this.ipAddress = "Error getting IP";
