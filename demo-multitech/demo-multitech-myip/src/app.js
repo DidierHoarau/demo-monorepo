@@ -3,7 +3,7 @@ const app = express();
 const port = 80;
 
 app.get('/', (req, res) => {
-  res.send(JSON.stringify(req));
+  res.send(JSON.stringify(req.headers));
   // res.send(
   //   `x-real-ip: ${req.headers['x-real-ip']} ; x-forwarded-for: ${
   //     req.headers['x-forwarded-for']
