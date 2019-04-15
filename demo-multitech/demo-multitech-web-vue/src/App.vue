@@ -50,6 +50,9 @@
     <h6>Visits</h6>
     <p>Count: {{ visits.counterMessage }}</p>
     <p>{{ visits.trackerMessage }}</p>
+
+    <h6>IP</h6>
+    <p>{{ ipAddress }}</p>
   </div>
 </template>
 
@@ -76,7 +79,8 @@ export default {
         trackerMessage: "",
         counterMessage: "0"
       },
-      commentInput: ""
+      commentInput: "",
+      ipAddress: ""
     };
   },
   created: function() {
@@ -109,6 +113,16 @@ export default {
         })
         .catch(() => {
           this.visits.trackerMessage = "Error tracking visit";
+        });
+    },
+    getIp: function() {
+      axios
+        .get(`/api-myip/`)
+        .then((res) => {
+          this.ipAddress = res;
+        })
+        .catch(() => {
+          this.ipAddress = "Error getting IP";
         });
     },
     countVisit: function() {

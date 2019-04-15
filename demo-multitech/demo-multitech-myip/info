@@ -1,5 +1,5 @@
-name=demo-multitech-web-vue
-version=1.6
+name=demo-multitech-myip
+version=1
 volumes=
 type=nodejs-10
 networks=demo-multitech-network
