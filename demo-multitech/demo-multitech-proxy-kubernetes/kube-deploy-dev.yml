@@ -16,8 +16,6 @@ spec:
     metadata:
       labels:
         app: ${SERVICE}
-      annotations:
-        sidecar.istio.io/inject: 'false'
     spec:
       containers:
         - image: ${DOCKER_REGISTRY}/${REGISTRY_NAMESPACE}/${SERVICE}:${SERVICE_VERSION}
@@ -42,6 +40,7 @@ spec:
   selector:
     app: ${SERVICE}
   type: NodePort
+  externalTrafficPolicy: Local
 ---
 apiVersion: v1
 kind: Service
