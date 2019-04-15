@@ -6,5 +6,5 @@ RUN apk add nginx-mod-http-lua git && \
   git clone https://github.com/knyar/nginx-lua-prometheus
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY conf_vue.conf /etc/nginx/conf.d/
+COPY conf_vue_dev.conf /etc/nginx/conf.d/
 COPY metrics.conf /etc/nginx/conf.d/

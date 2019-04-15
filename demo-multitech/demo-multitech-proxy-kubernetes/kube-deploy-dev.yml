@@ -28,7 +28,7 @@ metadata:
 spec:
   ports:
     - name: demo-multitech-vue
-      nodePort: 33100
+      nodePort: 32100
       port: 80
       protocol: TCP
       targetPort: 80
@@ -45,7 +45,7 @@ metadata:
 spec:
   ports:
     - name: demo-multitech-metrics
-      nodePort: 33101
+      nodePort: 32101
       port: 9113
       protocol: TCP
       targetPort: 9113

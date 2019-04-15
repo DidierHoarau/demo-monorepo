@@ -51,6 +51,10 @@
     <p>Count: {{ visits.counterMessage }}</p>
     <p>{{ visits.trackerMessage }}</p>
 
+    <h6>Session</h6>
+    <button v-on:click="sessionLogin()">Login</button>
+    <p>Login: {{ session.status }}</p>
+
     <h6>IP</h6>
     <p>{{ ipAddress }}</p>
   </div>
@@ -80,7 +84,11 @@ export default {
         counterMessage: "0"
       },
       commentInput: "",
-      ipAddress: ""
+      ipAddress: "",
+      session: {
+        id: "",
+        status: "Not Logged In"
+      }
     };
   },
   created: function() {
@@ -95,6 +103,7 @@ export default {
       }
       this.getComments();
       this.countVisit();
+      this.sessionCheck();
     },
     getPetInfo: function(index) {
       axios
@@ -157,6 +166,24 @@ export default {
       setTimeout(() => {
         this.getComments();
       }, 500);
+    },
+    sessionLogin: async function() {
+      const data = {};
+      await axios.post(`/api-session-login/`, data).then(response => {
+        this.session.id = response.data.session_id;
+        this.sessionCheck();
+      });
+    },
+    sessionCheck: async function() {
+      const data = { session_id: this.session.id };
+      await axios
+        .post(`/api-session-check/`, data)
+        .then(response => {
+          this.session.status = "Logged In";
+        })
+        .catch(error => {
+          this.session.status = "Not Logged In";
+        });
     }
   }
 };

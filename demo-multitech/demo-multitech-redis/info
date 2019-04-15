@@ -1,0 +1,5 @@
+name=demo-multitech-redis
+version=1
+volumes=
+builder=null
+networks=
