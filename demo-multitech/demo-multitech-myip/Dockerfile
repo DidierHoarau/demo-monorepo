@@ -8,8 +8,7 @@ WORKDIR /opt/app
 COPY . .
 
 RUN npm install && \ 
-    npm test && \
-    npm audit
+    npm test
 
 
 # RUN
