@@ -28,7 +28,7 @@ metadata:
 spec:
   ports:
     - name: demo-multitech-vue
-      nodePort: 32100
+      nodePort: 33080
       port: 80
       protocol: TCP
       targetPort: 80
@@ -60,7 +60,7 @@ metadata:
 spec:
   ports:
     - name: pod-port
-      protocol: 'TCP'
+      protocol: "TCP"
       port: 9113
       targetPort: 9113
   selector:
